@@ -110,8 +110,8 @@ void movesprite(Input* in, Sprite* s, int speed, int num, Map *m)
 	}
   if(s->sens == SENS_GAUCHE && s->posx < 0)
     s->posx += speed;
-  /*else if(s->sens == SENS_DROIT && (s->posx ) > m->image->w)
-    s->posx -= speed;*/
+  else if(s->sens == SENS_DROIT && ((s->posx + s->sph.imgw) > m->image->w ))
+    s->posx -= speed;
 	if(move)
 	{
 		initAnimation(&s->a, s->sens * s->sph.nbimgx, 4, delay);

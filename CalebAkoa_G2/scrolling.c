@@ -47,7 +47,7 @@ void initMap(Map* m, const char* fich, int w, int h, int debut)
 
 int scrollcenter(Sprite* s, Map* m)
 {
-  if((s->posx + s->sph.imgw / 2) >
+  if((s->posx + s->sph.imgw / 2) ==
      (m->xscroll + m->wscroll / 2) - s->sph.imgw / 2)
     return 1;
   return 0;

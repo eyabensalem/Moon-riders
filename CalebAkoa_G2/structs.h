@@ -100,7 +100,6 @@ void nbvie(Vie* v);
 void affichervie(SDL_Surface* ecran,Vie* v);
 
 void initSpriteshet(Spritesheet *sph, const char* fic, int nbimgx, int nbimgy,Uint16 R, Uint16 G, Uint16 B);
-void Liberer(Spritesheet* p);
 void initSprite(Sprite* s,Spritesheet* sph,int posx,int posy,int imagedepart);
 void afficherSprite(SDL_Surface* ecran, Sprite* s, Map* m);
 void movesprite(Input* in, Sprite* s, int speed, int num, Map *m);

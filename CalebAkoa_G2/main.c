@@ -8,8 +8,7 @@ int main(int argc, char *argv[])
   int i, nbplayer = 2;
   Map* m = malloc(nbplayer * sizeof(Map));  
   Input in;
-  Sprite* s;
-  Spritesheet sph[2];
+  Sprite* s = malloc(nbplayer * sizeof(Sprite));
   SDL_Init(SDL_INIT_VIDEO );
   
   ecran = SDL_SetVideoMode(HAUTEUR_ECRAN, LARGEUR_ECRAN, 32, SDL_HWSURFACE | SDL_DOUBLEBUF);
@@ -17,18 +16,19 @@ int main(int argc, char *argv[])
   SDL_WM_SetCaption("Caleb Essaie !", NULL);
   
 
-  initSpriteshet(&sph[0], "pecheur.bmp", 4, 4, 255, 127, 0);
-  initSpriteshet(&sph[1], "pecheur.bmp", 4, 4, 255, 127, 0);
+  initSpriteshet(&s[0].sph, "pecheur.bmp", 4, 4, 255, 127, 0);
+  if(nbplayer == 2)
+    initSpriteshet(&s[1].sph, "pecheur.bmp", 4, 4, 255, 127, 0);
  
  
   initInput(&in);
 
-  initMap(&m[0], "Back0.png", 400, 600, 0);
+  initMap(&m[0], "back.png", 400, 600, 0);
   if(nbplayer == 2)
-    initMap(&m[1], "Back0.png", 400, 600, 400);
+    initMap(&m[1], "back.png", 400, 600, 400);
 
-  initSprite(&s[0], &sph[0], 100, 100, 0);
-  initSprite(&s[1] , &sph[1], 100, 100, 1);
+  initSprite(&s[0], &s[0].sph, 100, 100, 0);
+  initSprite(&s[1] , &s[1].sph, 100, 100, 1);
   while(!in.quit && !in.key[SDLK_ESCAPE])
   {
     updateEvent(&in);
