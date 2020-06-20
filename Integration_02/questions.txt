@@ -1,0 +1,20 @@
+how many planets are in our solar systems ?
+8    
+10
+9
+what is the planet with the most mass?
+jupiter    
+mars
+earth
+what is the hottest planet?
+venus    
+jupiter
+saturn
+what is the planet with the most gravity?
+jupiter   
+earth    
+uranus
+what is the planet closest to the sun?
+mercury  
+mars
+neptune
